@@ -5,7 +5,7 @@ export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
   constructor() {
     super()
-    this.state.plants = {
+    this.state = {
       plants: []
     };
   };
@@ -19,7 +19,7 @@ export default class PlantList extends Component {
       .get("http://localhost:3333/plants")
       .then(res => {
         console.log(res);
-        this.setState({ plants: res.data });
+        this.setState({ plants: res.data.plantsData });
       })
       .catch(err => console.log(err));
   }
