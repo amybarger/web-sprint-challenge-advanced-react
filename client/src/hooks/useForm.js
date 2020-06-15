@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export const useForm = initialValues => {
+const useForm = initialValues => {
     const [values, setValues] = useState(initialValues);
 
     const handleChanges = e => {
@@ -15,3 +15,5 @@ export const useForm = initialValues => {
 
     return [values, handleChanges];
 }
+
+export default useForm;
